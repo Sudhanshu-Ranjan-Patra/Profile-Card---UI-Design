@@ -24,7 +24,21 @@ body{
     border-radius: 25px;
     padding: 25px;
     box-shadow: 0 5px 10px rgb(0, 0, 0,0.1);
+    position: relative;
 }
+
+.profile-card::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-radius: 25px 25px 0 0;
+    height: 36%;
+    width: 100%;
+    background-color: rgb(0, 110, 255);
+}
+
 .image{
     position: relative;
     width: 150px;
@@ -78,6 +92,15 @@ body{
     justify-content: center;
     color: #fff;
     font-size: 20px;
+    transition: transform 0.1s ease; 
+}
+
+.media-buttons .link:hover{
+    transform: scale(1.20) translateY(-3px) translateY(1px);
+}
+
+.media-buttons .link:active{
+    font-size: 18px;
 }
 
 .profile-card .buttons{
@@ -97,8 +120,46 @@ body{
     background-color: rgb(24, 123, 252);
     cursor: pointer;
     transition: all 0.3 ease;
+    transition: transform 0.2s ease; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .buttons .button:hover{
-    background-color: rgb(3, 112, 220);;
+    background-color: rgb(0, 110, 255);
+    transform: scale(1.10);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.buttons .button:active {
+    background-color:  rgb(24, 123, 252);
+    font-weight: 500;
+    transform: translateY(0); /* Reset position on click */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Reset shadow */
+}
+
+.profile-card .analytics{
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.analytics .data{
+    display: flex;
+    align-items: center;
+    color: #333;
+    padding: 0 20px;
+    border-right: 2px solid #e7e7e7;
+}
+
+.data:last-child{
+    border-right: none;
+}
+
+.data i{
+    font-size: 18px;
+    margin-right: 6px;
+}
+
+.data i:hover{
+    transform: scale(1.28);
 }
